@@ -789,7 +789,10 @@
 
           <!-- Contact Form with Real-Time Validation Feedback -->
           <div class="contact-form-card reveal delay-1">
-            <form id="contact-form" novalidate>
+            <form id="contact-form" action="https://formspree.io/f/mqpawlwa" method="POST" novalidate>
+              <!-- Formspree Integration -->
+              <input type="hidden" name="_subject" value="New Portfolio Message for K Ganesh">
+
               <div class="form-group" id="group-name">
                 <label for="contact-name" class="form-label">Your Name</label>
                 <input type="text" id="contact-name" name="name" class="form-control" placeholder="Your Name" required>

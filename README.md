@@ -85,6 +85,7 @@ All remaining personal details are clearly marked with brackets `[...]` inside `
 | **Hero & Contact** | Email Address | `kamasaniganesh942@gmail.com` (Configured) |
 | **Hero & Contact** | GitHub Profile | `https://github.com/kamasaniganesh942-bit` (Configured) |
 | **Hero & Contact** | LinkedIn Profile | `https://www.linkedin.com/in/k-ganesh-96614b426/` (Configured) |
+| **Contact Form** | Formspree Backend | `https://formspree.io/f/mqpawlwa` (Active & Configured) |
 | **Projects** | GitHub Repository URL | Configured to your GitHub profile |
 | **Projects** | `[Add your project title]` | Replace with your 4th project or hackathon title |
 | **Education** | `[Add your high school name]` | Your 12th grade school / junior college |

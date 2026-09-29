@@ -544,7 +544,7 @@ function initContactForm() {
     });
   }
 
-  contactForm.addEventListener('submit', (e) => {
+  contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     const isNameValid = validateField(nameInput, nameInput.value.trim().length > 0, '#group-name');
@@ -557,25 +557,65 @@ function initContactForm() {
       return;
     }
 
-    // Submit Simulation
+    const formEndpoint = contactForm.getAttribute('action') || '';
+
     submitBtn.disabled = true;
     btnText.innerHTML = '<span class="btn-spinner"></span> Sending...';
+    showFormFeedback('', '');
 
-    setTimeout(() => {
+    // Fallback if Formspree ID is still the placeholder
+    if (!formEndpoint || formEndpoint.includes('YOUR_FORMSPREE_ID')) {
       submitBtn.disabled = false;
       btnText.textContent = 'Send Message';
-      const senderName = nameInput.value.trim();
-      contactForm.reset();
+      showFormFeedback('Formspree endpoint not connected yet. Opening your email app...', 'error');
+      showToast('Opening your email app as fallback...');
+      const fallbackSubject = encodeURIComponent(subjectInput.value.trim());
+      const fallbackBody = encodeURIComponent(`Hi Ganesh,\n\nName: ${nameInput.value.trim()}\nEmail: ${emailInput.value.trim()}\n\nMessage:\n${messageInput.value.trim()}`);
+      window.location.href = `mailto:kamasaniganesh942@gmail.com?subject=${fallbackSubject}&body=${fallbackBody}`;
+      return;
+    }
 
-      // Clear validation state classes
-      [nameInput, emailInput, subjectInput, messageInput].forEach(inp => {
-        inp.classList.remove('is-valid', 'is-invalid');
+    try {
+      const response = await fetch(formEndpoint, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          name: nameInput.value.trim(),
+          email: emailInput.value.trim(),
+          subject: subjectInput.value.trim(),
+          message: messageInput.value.trim()
+        })
       });
-      document.querySelectorAll('.form-group').forEach(g => g.classList.remove('has-error'));
-      showFormFeedback('', '');
 
-      showToast(`Thank you, ${senderName}! Your message has been sent successfully.`);
-    }, 800);
+      if (response.ok) {
+        submitBtn.disabled = false;
+        btnText.textContent = 'Send Message';
+        const senderName = nameInput.value.trim();
+        contactForm.reset();
+
+        [nameInput, emailInput, subjectInput, messageInput].forEach(inp => {
+          inp.classList.remove('is-valid', 'is-invalid');
+        });
+        document.querySelectorAll('.form-group').forEach(g => g.classList.remove('has-error'));
+        showFormFeedback('✓ Message sent successfully! I will get back to you soon.', 'success');
+        showToast(`Thank you, ${senderName}! Your message was delivered to Ganesh.`);
+      } else {
+        const errorData = await response.json().catch(() => ({}));
+        let errorMsg = 'Submission failed.';
+        if (errorData && errorData.errors) {
+          errorMsg = errorData.errors.map(err => err.message).join(', ');
+        }
+        throw new Error(errorMsg);
+      }
+    } catch (err) {
+      submitBtn.disabled = false;
+      btnText.textContent = 'Send Message';
+      showFormFeedback('Could not send message via Formspree: ' + err.message, 'error');
+      showToast('Error sending message. You can reach out directly via email.');
+    }
   });
 
   function showFormFeedback(msg, type) {
