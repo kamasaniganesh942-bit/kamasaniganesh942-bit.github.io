@@ -151,7 +151,7 @@ function initInteractiveTerminal() {
         consoleOutput.classList.add('show');
         consoleOutput.innerHTML = `
           <div><span style="color:#38bdf8;">[1/3]</span> Checking dependencies... Python 3.12, Scikit-learn, Web APIs ✓</div>
-          <div><span style="color:#38bdf8;">[2/3]</span> Profile verified: <strong>K Ganesh</strong> (1st Year B.Tech) ✓</div>
+          <div><span style="color:#38bdf8;">[2/3]</span> Profile verified: <strong>K Ganesh</strong> (Yenepoya Deemed to be University • 1st Year B.Tech) ✓</div>
           <div><span style="color:#38bdf8;">[3/3]</span> Status: <strong>Open to Hackathon Teams &amp; Tech Projects! 🚀</strong></div>
         `;
         runBtn.innerHTML = '<span>✔ Done</span>';
@@ -383,7 +383,7 @@ function initProjectModal() {
         'Modular Python code structure designed for experiment reproduction.'
       ],
       tags: ['Python', 'Scikit-Learn', 'Pandas', 'NumPy', 'Machine Learning'],
-      repo: 'https://github.com/'
+      repo: 'https://github.com/kamasaniganesh942-bit'
     },
     'project-2': {
       title: 'Responsive Web Application',
@@ -396,7 +396,7 @@ function initProjectModal() {
         'Sleek glassmorphic visual aesthetics with theme switcher support.'
       ],
       tags: ['HTML5', 'CSS3', 'JavaScript ES6', 'Responsive Design', 'Glassmorphism'],
-      repo: 'https://github.com/'
+      repo: 'https://github.com/kamasaniganesh942-bit'
     },
     'project-3': {
       title: 'Python Task & Automation Script',
@@ -409,7 +409,7 @@ function initProjectModal() {
         'Built with Python standard libraries for cross-platform portability.'
       ],
       tags: ['Python 3', 'Automation', 'CLI Scripting', 'File I/O', 'Task Automation'],
-      repo: 'https://github.com/'
+      repo: 'https://github.com/kamasaniganesh942-bit'
     },
     'project-4': {
       title: '[Add your project title]',
@@ -422,7 +422,7 @@ function initProjectModal() {
         'Step 4: Showcase your growth as an AI and technology builder!'
       ],
       tags: ['[Add Technology 1]', '[Add Technology 2]', 'In Progress'],
-      repo: 'https://github.com/'
+      repo: 'https://github.com/kamasaniganesh942-bit'
     }
   };
 

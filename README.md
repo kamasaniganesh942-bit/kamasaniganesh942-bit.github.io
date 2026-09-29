@@ -10,7 +10,11 @@ Built with **pure HTML5, CSS3, and JavaScript** — no external backend dependen
 
 - **Personal Profile**:
   - Name: **K Ganesh**
+  - Institution: **Yenepoya Deemed to be University**
   - Education: **First-Year B.Tech Student**
+  - Email: **kamasaniganesh942@gmail.com**
+  - GitHub: [kamasaniganesh942-bit](https://github.com/kamasaniganesh942-bit)
+  - LinkedIn: [k-ganesh-96614b426](https://www.linkedin.com/in/k-ganesh-96614b426/)
   - Interests: **Artificial Intelligence, Python Programming, Modern Web Development, and Emerging Technologies**
   - Career Goal: **To learn, build projects, participate in hackathons, and grow as an AI/technology developer**
 - **Modern Dark-First Aesthetic**: Luminous gradient mesh glows, glassmorphism card surfaces, and curated typography (`Outfit`, `Plus Jakarta Sans`, and `JetBrains Mono`).
@@ -75,15 +79,14 @@ Double-click `index.html` or right-click `index.html` and choose **Open with > C
 
 All remaining personal details are clearly marked with brackets `[...]` inside `index.html`:
 
-| Section | Placeholder in index.html | Action / Note |
+| Section | Detail | Status / Value |
 |---|---|---|
-| **Hero Terminal** | `[Add your college name]` | Replace with your college/university name |
-| **Hero & Contact** | `[Add your email address]` | Replace with your personal or student email |
-| **Hero & Contact** | `[Add your GitHub profile link]` | Replace with your GitHub URL |
-| **Hero & Contact** | `[Add your LinkedIn profile link]` | Replace with your LinkedIn URL |
-| **Projects** | `[Add your GitHub repository URL]` | Replace with your repository URLs |
+| **Hero & Education** | College Name | `Yenepoya Deemed to be University` (Configured) |
+| **Hero & Contact** | Email Address | `kamasaniganesh942@gmail.com` (Configured) |
+| **Hero & Contact** | GitHub Profile | `https://github.com/kamasaniganesh942-bit` (Configured) |
+| **Hero & Contact** | LinkedIn Profile | `https://www.linkedin.com/in/k-ganesh-96614b426/` (Configured) |
+| **Projects** | GitHub Repository URL | Configured to your GitHub profile |
 | **Projects** | `[Add your project title]` | Replace with your 4th project or hackathon title |
-| **Education** | `[Add your college name]` | e.g., Your university engineering campus |
 | **Education** | `[Add your high school name]` | Your 12th grade school / junior college |
 | **Education** | `[Add your board or school details]` | e.g., CBSE / State Board / Science Stream |
 | **Education** | `[Add course or certification name]` | e.g., Python Course, CS50, or online studies |
